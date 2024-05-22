@@ -8,11 +8,10 @@ public class movetheball : MonoBehaviour
     // Start is called before the first frame update
 
     public float movespeed = 5;
-    private float horizontalinput;
-    private float forwardinput;
-
     public float Turnspeed;
     public float upPower;
+    private float horizontalinput;
+    private float forwardinput;
     Rigidbody rigid;
     void Start()
     {
@@ -33,10 +32,10 @@ public class movetheball : MonoBehaviour
         }
         else if(transform.rotation.x < 0) transform.Rotate(Vector3.right * Turnspeed * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.A)){
-            transform.position = new Vector3(1,1,1);
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }
+        // if(Input.GetKey(KeyCode.A)){
+        //     transform.position = new Vector3(1,1,1);
+        //     transform.rotation = Quaternion.Euler(0,0,0);
+        // }
         transform.Translate(Vector3.forward * movespeed * forwardinput * Time.deltaTime);
         transform.Rotate(Vector3.up, Turnspeed * horizontalinput * Time.deltaTime);
         //transform.Translate(Vector3.forward * Time.deltaTime * movespeed * forwardinput);
